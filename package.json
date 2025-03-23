@@ -7,7 +7,8 @@
     "test:coverage": "jest --coverage",
     "build": "npx tsc",
     "start": "node ./dist/index.js",
-    "dev": "nodemon ./src/index.ts"
+    "dev": "nodemon ./src/index.ts",
+    "admin": "nodemon ./src/admin/createadmin.ts"
   },
   "author": "Akshil Malani",
   "license": "ISC",

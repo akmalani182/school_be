@@ -1,6 +1,4 @@
 import { DataTypes, Model, Sequelize } from "sequelize";
-import Profile from "./profile.model";
-import User from "./user.model";
 
 class School extends Model {
   public id!: number;
@@ -35,6 +33,21 @@ class School extends Model {
           type: DataTypes.STRING,
           allowNull: false,
           unique: true,
+        },
+        address: {
+          type: DataTypes.STRING,
+        },
+        phoneNumber: {
+          type: DataTypes.STRING,
+        },
+        logoUrl: {
+          type: DataTypes.STRING,
+        },
+        establishedYear: {
+          type: DataTypes.INTEGER,
+        },
+        socialLinks: {
+          type: DataTypes.TEXT,
         },
       },
       {

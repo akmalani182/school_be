@@ -25,3 +25,8 @@ export const getTokens = async (data: { userId: string, role: string }): Promise
 export const verifyToken = async (token: string): Promise<{}> => {
   return jwt.verify(token, process.env.JWT_SECRET_KEY);
 };
+
+
+export const generateSubdomain = (name: string) => {
+  return name.toLowerCase().replace(/\s+/g, "-");
+};

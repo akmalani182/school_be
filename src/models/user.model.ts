@@ -19,7 +19,7 @@ class User extends Model {
         },
         schoolId: {
           type: DataTypes.INTEGER,
-          allowNull: false,
+          allowNull: true,
           references: {
             model: School,
             key: "id",

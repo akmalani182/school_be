@@ -2,7 +2,7 @@ export const getOneDataQuery = async (
   model,
   where: object,
   attributes?: string[] | string[][],
-  include?: object[]
+  include?: object[] | string[]
 ) => {
   try {
     return await model.findOne({ where, attributes, include });

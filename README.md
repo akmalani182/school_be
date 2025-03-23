@@ -1,83 +1,65 @@
-# API Project
+# 🎓 Multi-Tenant School Profile Backend (Node.js + TypeScript + PostgreSQL)
 
-## Setup Instructions
+This is the **backend** for the multi-tenant school profile application. It provides APIs for user authentication, school management, and subdomain-based data isolation.
 
-To get started with this project, follow the steps below to install dependencies and configure the database.
+---
 
-### 1. Install Dependencies
+## **📌 Features**
+✅ **Authentication System** (Register/Login)  
+✅ **Role-based Access Control** (Admin & User)  
+✅ **Subdomain-based Routing** (Each school has its own subdomain)  
+✅ **Data Isolation** (Schools can only access their own data)  
+✅ **API Security** using **JWT Authentication**  
+✅ **PostgreSQL Database with Sequelize ORM**  
 
-Ensure that you have [Yarn](https://classic.yarnpkg.com/en/docs/install) installed. Then, run the following command to install the required dependencies:
+---
 
-```bash
+## **📌 Tech Stack**
+- **Backend Framework**: Node.js with Express.js  
+- **Database**: PostgreSQL  
+- **ORM**: Sequelize  
+- **Authentication**: JWT (JSON Web Tokens)  
+- **Environment Variables**: dotenv  
+- **Security**: Helmet & CORS  
+
+---
+
+## **📌 Prerequisites**
+### **Install Required Software**
+- **[Node.js](https://nodejs.org/)** (v18+ recommended)
+- **[PostgreSQL](https://www.postgresql.org/)** (Ensure PostgreSQL is running)
+- **Yarn** (Recommended) or npm (`npm install -g yarn`)
+
+## **📌 Environment Variables Setup**
+Before running the project, create a **`.env`** file in the root directory and update it with your database credentials:
+
+```env
+# PostgreSQL Database Configuration
+DATABASE_NAME=school_profile
+DATABASE_USER=your_postgres_user
+DATABASE_PASSWORD=your_postgres_password
+DATABASE_HOST=localhost
+DATABASE_PORT=5432
+
+# JWT Secret Key for Authentication
+JWT_SECRET=your_jwt_secret
+```
+
+## **📌 Create Admin User**
+After setting up the database, run the following command to create an **admin user**:
+
+```sh
+yarn run admin
+```
+
+## **📌 Install Dependencies**
+
+```sh
 yarn install
 ```
 
-### 2. Configure the Database
+## **📌 run dev server**
 
-Before running the API, you need to configure the database. Follow the instructions below to set up PostgreSQL on your local machine and configure the database connection.
-
-#### 2.1. Install PostgreSQL
-
-If you haven't already installed PostgreSQL, you can download and install it from the official website:
-
-- [Download PostgreSQL](https://www.postgresql.org/download/)
-
-Follow the installation instructions for your operating system.
-
-#### 2.2. Create the Database
-
-After installing PostgreSQL, you need to create the database that the API will connect to. Here's how to do it:
-
-1. Open a terminal or command prompt.
-2. Access PostgreSQL by running the following command (replace `postgres` with your PostgreSQL username if different):
-
-   ```bash
-   psql -U postgres
-
-### 3. Create the Database
-
-In order for the API to work, you need to create the database that it will connect to. Follow the steps below to create the `Idea` database on your local PostgreSQL server.
+```sh
+yarn run dev
 ```
-CREATE DATABASE Idea;
-```
-
-## Environment Variables
-
-Environment variables are used to store configuration settings that your application needs to run. These values are stored in the `.env` file in the root directory of your project. Make sure you set the correct environment variables before running the API.
-
-### 1. Create a `.env` File
-
-In the root directory of your project, create a file named `.env`. This file will hold the configuration values required by the application.
-
-### 2. Configure the Environment Variables
-
-The following environment variables are required for the application:
-
-```env
-PORT=
-DBHOST=
-DBPORT=
-DBUSERNAME=
-DBPASSWORD=
-DATABASENAME=
-JWT_EXPIRE_TIME=15m
-JWT_REFRESH_EXPIRE_TIME=7d
-JWT_SECRET_KEY=
-ALLOWED_IPS=
-```
-
-## Running the API
-
-Once the database is set up and all dependencies are installed, you can run the API locally. Follow the instructions below to start the API server.
-
-### 1. Start the API
-
-To start the API, you need to run the following command from the root directory of your project:
-
-```bash
-yarn start
-```
-
-## Running Tests with `yarn test`
-
-To ensure the API works as expected, you need to run the test cases. If you're using [Jest](https://jestjs.io/) or other testing libraries, you can run the tests using the `yarn test` command. Follow the instructions below to run tests with `yarn test`.

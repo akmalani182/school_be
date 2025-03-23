@@ -26,7 +26,7 @@ const login = async (req: Request, res: Response) => {
 
 const register = async (req: Request, res: Response) => {
   try {
-    const result = await authService.loginService(req);
+    const result = await authService.registerService(req);
     return sendResponse(
       res,
       HttpStatus.OK,

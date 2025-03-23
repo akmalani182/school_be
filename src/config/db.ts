@@ -1,4 +1,3 @@
-import Profile from "../models/profile.model";
 import School from "../models/school.model";
 import User from "../models/user.model";
 
@@ -14,14 +13,9 @@ const sequelize = new Sequelize({
 });
 
 School.initModel(sequelize);
-Profile.initModel(sequelize);
 User.initModel(sequelize);
-
-// Define relationships
-School.hasOne(Profile, { foreignKey: "schoolId", as: "profile" });
-Profile.belongsTo(School, { foreignKey: "schoolId" });
 
 School.hasMany(User, { foreignKey: "schoolId", as: "users" });
 User.belongsTo(School, { foreignKey: "schoolId" });
 
-export { sequelize, School, Profile, User };
+export { sequelize, School, User };
